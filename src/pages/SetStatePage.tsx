@@ -11,6 +11,12 @@ export default class SetStatePage extends Component {
     //组件卸载之前
     console.log(" Foo componentWillUnmount");
   }
+
+  shouldComponentUpdate(nextProps:any, nextState:any) {
+    // 是否更新
+    return true;
+  }
+
   changeValue = (v: number) => {
     // setState 异步
     // setState 在setTimeout和原生事件中是同步的
