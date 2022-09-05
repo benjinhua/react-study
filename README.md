@@ -13,3 +13,5 @@ Start the dev server,
 ```bash
 $ yarn start
 ```
+
+### react 状态管理器 redux mobx
