@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component, useState, useEffect, useRef } from 'react'
 
 // class Demo extends Component {
 //   render() {
@@ -10,6 +10,8 @@ import React, { Component, useState, useEffect } from 'react'
 
 function Demo() {
   const [ count, setCount ] = useState<number>(0);
+
+  const myRef: any = useRef();
 
   useEffect(()=>{
     // 相当于componentDidMount
@@ -27,6 +29,7 @@ function Demo() {
   return (
     <div>
       index {count}
+      <input type="text" ref={myRef}/>
       <button onClick={add}>count++</button>
     </div>
   )
