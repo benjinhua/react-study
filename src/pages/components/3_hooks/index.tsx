@@ -8,11 +8,11 @@ import React, { Component, useState, useEffect, useRef } from 'react'
 //   }
 // }
 
-function Demo() {
+function DemoHook() {
   const [ count, setCount ] = useState<number>(0);
 
   const myRef: any = useRef();
-
+/*
   useEffect(()=>{
     // 相当于componentDidMount
 
@@ -20,7 +20,14 @@ function Demo() {
     return () => { // 组件卸载前执行
 
     }
-  },[])
+  },[]) // 传空数组，只执行一次
+  */
+
+  useEffect(() => {
+    console.log(11)
+    // 使用浏览器的 API 更新页面标题
+    document.title = `You clicked ${count} times`;
+  }); // 不传任何值 代表监听所有值
 
   function add() {
     // setCount(count + 1); 第一种写法
@@ -35,4 +42,4 @@ function Demo() {
   )
 }
 
-export default Demo;
+export default DemoHook;
